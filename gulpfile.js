@@ -42,10 +42,8 @@ gulp.task('reload', function() {
 
 gulp.watch('./app/**/*.js', ['reload']);
 gulp.watch('./app/**/*.html', ['reload']);
-//gulp.watch('./scss/**/*.scss', ['reload']);
 gulp.watch('./app/css/*', function() {
-  // grab css files and send them into browserSync.stream
   // this injects the css into the page
   gulp.src('./app/css/*')
         .pipe(browserSync.stream());
-    });
+});
