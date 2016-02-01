@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
-//var open = require('gulp-open');
 var browserSync = require('browser-sync').create();
 
 var paths = {
@@ -17,9 +16,7 @@ gulp.task('sass', function(done) {
   gulp.src('./scss/app.scss')
     .pipe(sass())
     .pipe(gulp.dest('./app/css/'))
-    .pipe(cssnano({
-      keepSpecialComments: 0
-    }))
+    .pipe(cssnano())
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./app/css/'))
     .on('end', done);
@@ -46,9 +43,9 @@ gulp.task('reload', function() {
 gulp.watch('./app/**/*.js', ['reload']);
 gulp.watch('./app/**/*.html', ['reload']);
 //gulp.watch('./scss/**/*.scss', ['reload']);
-gulp.watch('app/css/*', function() {
+gulp.watch('./app/css/*', function() {
   // grab css files and send them into browserSync.stream
   // this injects the css into the page
-  gulp.src('app/css/*')
+  gulp.src('./app/css/*')
         .pipe(browserSync.stream());
     });
