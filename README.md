@@ -74,7 +74,7 @@ Instead of http-server used by the original angular-seed, this project uses Brow
 npm start
 ```
 
-A browser will automatically launch. Saving files should 
+A browser will automatically launch. Saving files should either live-inject your changes (in the case of CSS), or reload your browser (in the case of JS and HTML).
 
 
 ## Directory Layout
