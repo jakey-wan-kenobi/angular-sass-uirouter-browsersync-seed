@@ -68,7 +68,7 @@ it easier to serve the files by a webserver.*
 
 ### Run the Application
 
-Instead of http-server used by the original angular-seed, this project uses BrowserSync.  To start the server and launch your browser, simply use from the project's root: 
+Instead of http-server used by the original angular-seed, this project uses BrowserSync.  To start the server and launch your browser, simply cd to your project's root directory and use: 
 
 ```
 npm start
