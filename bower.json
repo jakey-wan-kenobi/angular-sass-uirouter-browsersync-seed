@@ -2,7 +2,7 @@
   "name": "angular-sass-uirouter-browsersync-seed",
   "description": "A starter project for AngularJS. Based on the official angular-seed, but extending it with SASS, ui-router, browser-sync for live browser reloading, etc.",
   "version": "0.0.0",
-  //"homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "private": true,
   "dependencies": {
