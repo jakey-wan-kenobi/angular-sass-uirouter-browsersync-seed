@@ -9,7 +9,7 @@ var paths = {
 };
 
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch', 'open']);
 
  
 gulp.task('sass', function(done) {
