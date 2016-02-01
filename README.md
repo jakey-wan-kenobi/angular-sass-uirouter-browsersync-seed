@@ -1,11 +1,13 @@
 # angular-seed — the seed for AngularJS apps
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+Like the [official angular-seed](https://github.com/angular/angular-seed), this project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
 
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
+Along with the HTML5 boilerplate, a few preconfigured views, karma and jasmine unit testing, this seed also comes with: 
+
+* SASS and gulp-powered auto-compiling (along with css-nano for auto-minification)
+* BrowserSync integration -- use 'npm start' to launch a chrome browser. Saving will live inject CSS and automatically reload when JS or HTML files change.
+* [ui-router](https://github.com/angular-ui/ui-router) instead of ngRoute. It's just better.
 
 The seed app doesn't do much, just shows how to wire two controllers and views together.
 
@@ -22,19 +24,20 @@ You need git to clone the angular-seed repository. You can get git from
 We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone angular-seed
 
-Clone the angular-seed repository using [git][git]:
+### Clone the repo
+
+Clone the repository using [git][git]:
 
 ```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
+https://github.com/jakey-wan-kenobi/angular-sass-uirouter-browsersync-seed.git
+cd angular-sass-uirouter-browsersync-seed
 ```
 
 If you just want to start a new project without the angular-seed commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
+git clone --depth=1 https://github.com/jakey-wan-kenobi/angular-sass-uirouter-browsersync-seed.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
@@ -56,8 +59,8 @@ npm install
 Behind the scenes this will also call `bower install`.  You should find that you have two new
 folders in your project.
 
-* `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the angular framework files
+* `node_modules` - contains the npm packages for the tools we need. Make sure that gulp-sass, gulp-cssnano, gulp-rename, and browser-sync were all installed.
+* `app/bower_components` - contains the angular framework files (accept for ui-router, which is simply included via CDN in the index.html footer area)
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
 angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
@@ -65,22 +68,22 @@ it easier to serve the files by a webserver.*
 
 ### Run the Application
 
-We have preconfigured the project with a simple development web server.  The simplest way to start
-this server is:
+Instead of http-server used by the original angular-seed, this project uses BrowserSync.  To start the server and launch your browser, simply use from the project's root: 
 
 ```
 npm start
 ```
 
-Now browse to the app at `http://localhost:8000/app/index.html`.
-
+A browser will automatically launch. Saving files should 
 
 
 ## Directory Layout
 
 ```
 app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
+  css/                  --> stylesheets will output here on save of .scss file
+    app.css             --> default stylesheet
+    app.min.css         --> minified css (this will only appear after saving your .scss file)
   components/           --> all app specific modules
     version/              --> version related components
       version.js                 --> version module declaration and basic "version" value service
@@ -97,13 +100,16 @@ app/                    --> all of the source files for the application
     view2.html            --> the partial template
     view2.js              --> the controller logic
     view2_test.js         --> tests of the controller
-  app.js                --> main application module
+  js                      --> all of app's js files go here
+    app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
   index-async.html      --> just like index.html, but loads js files asynchronously
 karma.conf.js         --> config file for running unit tests with Karma
 e2e-tests/            --> end-to-end tests
   protractor-conf.js    --> Protractor config file
   scenarios.js          --> end-to-end scenarios to be run by Protractor
+scss                    --> SASS folder
+  app.scss              --> put all of your css here, it'll auto-compile to css folder w/in 'app' folder
 ```
 
 ## Testing
@@ -221,27 +227,6 @@ don't require a backend server at all, we recommend serving the project files us
 webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
 sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
 etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-
-### Running the App during Development
-
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
-tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
-install the tool globally:
-
-```
-sudo npm install -g http-server
-```
-
-Then you can start your own development web server to serve static files from a folder by
-running:
-
-```
-http-server -a localhost -p 8000
-```
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
 
 
 ### Running the App in Production
