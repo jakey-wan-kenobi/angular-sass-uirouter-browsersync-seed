@@ -1,12 +1,12 @@
 # angular-sass-uirouter-browsersync-seed — the impossibly-named seed for AngularJS apps
 
-Like the [official angular-seed](https://github.com/angular/angular-seed), this project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these
+Like the [official angular-seed](https://github.com/angular/angular-seed), this project is an application skeleton for an [AngularJS](http://angularjs.org/) web app (with a few extras and preconfigurations that'll make your life easy). You can use it to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
 
 Along with the HTML5 boilerplate, a few preconfigured views, karma and jasmine unit testing, this seed also comes with: 
 
 * SASS and gulp-powered auto-compiling (along with css-nano for auto-minification)
-* BrowserSync integration -- use 'npm start' to launch a chrome browser. Saving will live inject CSS and automatically reload when JS or HTML files change.
+* BrowserSync integration instead of http-server -- use 'npm start' to launch a chrome browser. Saving will live inject CSS and automatically reload when JS or HTML files change.
 * [ui-router](https://github.com/angular-ui/ui-router) instead of ngRoute. It's just better.
 
 The seed app doesn't do much, just shows how to wire two controllers and views together.
@@ -14,7 +14,7 @@ The seed app doesn't do much, just shows how to wire two controllers and views t
 
 ## Getting Started
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+To get you started you can simply clone the repository and install the dependencies:
 
 ### Prerequisites
 
